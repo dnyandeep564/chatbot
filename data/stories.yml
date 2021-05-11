@@ -1,0 +1,26 @@
+version: "2.0"
+
+stories:
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+
+
+# - story: Allowed_time
+#   steps:
+#    - intent: reserve_request
+#    - action: utter_table_req
+#    - intent: table_entry
+#    - action: utter_AC_section
+#    - intent: inform
+#    - action: utter_show_selection
+  # - story: allowed_time
+  #   steps:
+  #     - intent: reserve_request
+  #     - action: reservation_form
+  #     - active_loop: reservation_form
+  #     - action: utter_show_selection

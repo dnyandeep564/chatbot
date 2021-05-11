@@ -1,0 +1,109 @@
+version: "2.0"
+
+nlu:
+- intent: reserve_request
+  examples: |
+    - I want to reserve a table
+    - I want to book a table
+    - reserve a table for me
+    - Reserve a table for me
+    - Book a table for me please
+    - Reserve a table for me please
+
+- intent: faq_time
+  examples: |
+    - What are your timings?
+    - When are you open today?
+
+- intent: faq_days
+  examples: |
+    - What days are you open?
+    - For which days of week are you open?
+
+- intent: faq_cancel
+  examples: |
+    - How do I cancel a reservation?
+    - How to cancel my reservation?
+- intent: faq_special
+  examples: |
+    - What are the specials?
+    - What is the speciality of your restaurant?
+
+#- intent: table_entry
+#  examples: |
+#    - [2](seats) seats
+#    - [1](seats) seat
+
+- intent: n_seats
+  examples: |
+    - [2]{"entity":"seats"} seats
+    - [1]{"entity":"seats"} seat
+    - [1]{"entity":"seats"}
+
+- intent: n_section
+  examples: |
+    - [AC]{"entity":"section","value":"AC"}
+    - [Non-AC]{"entity":"section","value":"Non-AC"}
+    - [AC]{"entity":"section","value":"AC"} section
+    - [Non-AC]{"entity":"section","value":"Non-AC"} section
+    - Give table in [AC]{"entity":"section","value":"AC"} section
+
+# - intent: ask_time
+#   examples: |
+#     - What time is it right now?
+#     - what's today?
+#     - What day is it today?
+
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect

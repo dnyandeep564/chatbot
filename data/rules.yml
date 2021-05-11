@@ -1,0 +1,52 @@
+version: "2.0"
+
+rules:
+
+- rule: faq1
+  steps:
+    - intent: faq_days
+    - action: utter_faq_days
+
+- rule: faq2
+  steps:
+    - intent: faq_time
+    - action: utter_faq_time
+
+- rule: faq3
+  steps:
+    - intent: faq_cancel
+    - action: utter_faq_cancel
+
+- rule: faq4
+  steps:
+    - intent: faq_special
+    - action: utter_faq_special
+
+#
+#- rule: Say goodbye anytime the user says goodbye
+#  steps:
+#  - intent: goodbye
+#  - action: utter_goodbye
+#
+#- rule: Say 'I am a bot' anytime the user challenges
+#  steps:
+#  - intent: bot_challenge
+#  - action: utter_iamabot
+- rule: Activate form
+  steps:
+  - intent: reserve_request
+  - action: reservation_form
+  - active_loop: reservation_form
+
+- rule: Submit form
+  condition:
+  # Condition that form is active.
+  - active_loop: reservation_form
+  steps:
+  # Form is deactivated
+  - action: reservation_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  # The actions we want to run when the form is submitted.
+  - action: action_submit
